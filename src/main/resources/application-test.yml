@@ -1,6 +1,13 @@
 spring:
-  profile.active: dev
+  profile.active: test
   datasource:
-    url: jdbc:mysql://localhost/vollmed_api_test?createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3307/vollmed_api_test?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
     password: luis200390
+
+server:
+  error:
+    include-stacktrace: never
+api:
+  security:
+    secret: ${JWT_SECRET:123456}

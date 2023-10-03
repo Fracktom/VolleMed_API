@@ -64,7 +64,7 @@ class ConsultaControllerTest {
         //given
         var fecha = LocalDateTime.now().plusHours(1);
         var especialidad = Especialidad.CARDIOLOGIA;
-        var datos = new DatosDetalleConsulta(null,2l,5l,fecha);
+        var datos = new DatosDetalleConsulta(null, 3l, 5l, fecha);
 
         // when
 
@@ -72,7 +72,7 @@ class ConsultaControllerTest {
 
         var response = mvc.perform(post("/consultas")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(agendarConsultaJacksonTester.write(new DatosAgendarConsulta(2l,5l,fecha, especialidad)).getJson())
+                .content(agendarConsultaJacksonTester.write(new DatosAgendarConsulta(3l, 5l, fecha, especialidad)).getJson())
         ).andReturn().getResponse();
 
         //then
